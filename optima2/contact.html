@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Circular Navigation - Demo 1 | Codrops</title>
+		<meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
+		<meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
+		<meta name="author" content="Sara Soueidan for Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="vanta/vendor/three.r92.min.js"></script>
+		<script src="vanta/dist/vanta.clouds.min.js"></script>
+		<script>
+			function webGL() {
+				VANTA.CLOUDS({
+				el: "#scene",
+				backgroundAlpha: 1.00
+				});
+			}
+        </script>
+        
+        <style type="style\css">
+            html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAFA;
+}
+.demo-card-wide {
+  margin:50px;
+  height: 600px;
+  width: 1280px;
+}
+#map {
+  height: 100%;
+  width: 100%;
+}
+        </style>
+
+<script type="text/javascript">
+
+</script>
+
+	</head>
+	<body onload = "webGL()">
+		<div id = "scene"></div>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix" style="background-color: transparent;">
+				<a href="https://www.nitt.edu/home/academics/departments/ca/
+" style="background-color: transparent;"><img src="icon/nitt.png" style="background-color: transparent; width: 150x;
+height: 150px;"></a>
+<a href="https://www.nitt.edu/home/academics/departments/ca/
+" style="background-color: transparent;float: right;width: 150x;
+height: 150px;"><img src="icon/optimalogo3.png" style="background-color: transparent;"></a>
+
+			</div>
+			<!-- <header>
+				<h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
+				<nav class="codrops-demos">
+					<a class="current-demo" href="index.html">Demo 1</a>
+					<a href="index2.html">Demo 2</a>
+					<a href="interactivedemo/index.html">Intractive demo</a>
+				</nav>
+            </header> -->
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div id="map"></div>
+              </div>
+                  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBERShUthQqBT0gGIoyIxtvtjmSwrflYS8&callback=initMap">
+                  </script>
+                  <script>
+                  function initMap() {
+  
+  var myLatLng = {
+    lat: 52.078874, 
+    lng: 4.312620
+  };
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 17,
+    center: myLatLng
+  });
+   
+// Using the function to create multiple markers
+  geocodeLatLng("52.077937, 4.311377","Apple Store","Apple Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, and online services.");
+  geocodeLatLng("52.079572, 4.313265","Ridderzaal","The Ridderzaal is the main building of the 13th century Binnenhof in The Hague, Netherlands. It is used for the state opening of Parliament on Prinsjesdag, when the Dutch monarch drives to Parliament in the Golden Coach and delivers the speech from the throne. It is also used for official royal receptions, and interparliamentary conferences.")
+  
+var infowindow = new google.maps.InfoWindow({maxWidth: 300});
+  
+  function geocodeLatLng(location,title,body) {
+    var geocoder = new google.maps.Geocoder;
+    var input = location;
+    var latlngStr = input.split(',', 2);
+    var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+          var marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+          });
+
+          marker.addListener('click', function() {
+            infowindow.setContent("<h3>" + title + "</h3>" + "<p>" + body + "</p>");
+            infowindow.open(map, marker);
+          });
+          
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+ 
+}
+                  </script>
+			<div class="component">
+				<!-- Start Nav Structure -->
+				<button class="cn-button" id="cn-button">+</button>
+				<div class="cn-wrapper" id="cn-wrapper">
+				    <ul>
+				      <li><a href="#"><span class="icon-picture"></span></a></li>
+				      <li><a href="#"><span class="icon-headphones"></span></a></li>
+				      <li><a href="#"><span class="icon-home"></span></a></li>
+				      <li><a href="#"><span class="icon-facetime-video"></span></a></li>
+				      <li><a href="#"><span class="icon-envelope-alt"></span></a></li>
+				     </ul>
+				</div>
+				<div id="cn-overlay" class="cn-overlay"></div>
+				<!-- End Nav Structure -->
+			</div>
+		</div><!-- /container -->
+		<script src="js/polyfills.js"></script>
+		<script src="js/demo1.js"></script>
+		<!-- For the demo ad only -->   
+	</body>
+</html>
