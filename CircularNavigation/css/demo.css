@@ -24,7 +24,7 @@ a {
 
 .container > header {
 	margin: 0 auto;
-	padding: 2em;
+	/* padding: 2em; */
 	text-align: center;
 	background: rgba(0,0,0,0.01);
 }
