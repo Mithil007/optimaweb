@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Decorative WebGL Backgrounds | Demo 1 | Codrops</title>
+		<meta name="description" content="A collection of decorative animated background shapes powered by WebGL and TweenMax." />
+		<meta name="keywords" content="webgl, background, shape, web design, web development, tweenmax, gsap, animation" />
+		<meta name="author" content="Louis Hoebregts for Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Barlow:400,500,700|Playfair+Display" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<link rel="stylesheet" type="text/css" href="pater/pater.css" />
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	</head>
+	<body class="demo-1">
+		
+		<main>
+		 <!-- <div class="content content--fixed">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/AnimatedFrameSlideshow/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
+						<a class="codrops-icon codrops-icon--drop" href="https://tympanus.net/codrops/?p=33168" title="Back to the article"><svg class="icon icon--drop"><use xlink:href="#icon-drop"></use></svg></a>
+					</div>
+					<h1 class="codrops-header__title">Decorative WebGL Backgrounds</h1>
+				</header> -->
+				<!-- <nav class="demos">
+					<svg class="icon icon--keyboard"><use xlink:href="#icon-keyboard"></use></svg>
+					<a class="demo demo--current" href="index.html"><span>Demo 1</span></a>
+					<a class="demo" href="index2.html"><span>Demo 2</span></a>
+					<a class="demo" href="index3.html"><span>Demo 3</span></a>
+					<a class="demo" href="index4.html"><span>Demo 4</span></a>
+					<a class="demo" href="index5.html"><span>Demo 5</span></a>
+					<a class="demo" href="index6.html"><span>Demo 6</span></a>
+				</nav> -->
+				
+			<!-- </div> -->
+			<div class="content">
+				<canvas class="scene scene--full" id="scene"></canvas>
+				<script type="x-shader/x-vertex" id="wrapVertexShader">
+					attribute float size;
+					attribute vec3 color;
+					varying vec3 vColor;
+					void main() {
+						vColor = color;
+						vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+						gl_PointSize = size * ( 350.0 / - mvPosition.z );
+						gl_Position = projectionMatrix * mvPosition;
+					}
+				</script>
+				<script type="x-shader/x-fragment" id="wrapFragmentShader">
+					varying vec3 vColor;
+					uniform sampler2D texture;
+					void main(){
+						vec4 textureColor = texture2D( texture, gl_PointCoord );
+						if ( textureColor.a < 0.3 ) discard;
+						vec4 color = vec4(vColor.xyz, 1.0) * textureColor;
+						gl_FragColor = color;
+					}
+				</script>
+				<div class="content__inner">
+					<h2 class="content__title" style="font-family: 'Righteous', cursive;">Optima</h2>
+					<h3 class="content__subtitle">Let's optimise the world</h2>
+				</div>
+			</div>
+		</main>
+		<script src="js/demo.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/demo1.js"></script>
+	</body>
+</html>

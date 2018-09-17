@@ -93,7 +93,7 @@ body {
 .cn-button:hover,
 .cn-button:active,
 .cn-button:focus {
-  color: #aa1010;
+  color: #1b5c7a;
 }
 
 .csstransforms .cn-wrapper li {
@@ -183,19 +183,19 @@ items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */
 }
 
 .csstransforms .cn-wrapper li:nth-child(odd) a {
-  background-color: #a11313;
-  background-color: hsla(0, 88%, 63%, 1);
+  background-color: #533ae2;
+  background-color: rgb(119, 164, 231);
 }
 
 .csstransforms .cn-wrapper li:nth-child(even) a {
-  background-color: #a61414;
-  background-color: hsla(0, 88%, 65%, 1);
+  background-color: #260991;
+  background-color: rgb(55, 13, 206);
 }
 
 /* active style */
 .csstransforms .cn-wrapper li.active a {
-  background-color: #b31515;
-  background-color: hsla(0, 88%, 70%, 1);
+  background-color: #0506588a;
+  background-color: rgba(30, 6, 245, 0.507);
 }
 
 
@@ -203,8 +203,8 @@ items should be rotated by x, minus (sum of angles - 180)2s (for this demo) */
 .csstransforms .cn-wrapper li:not(.active) a:hover,
 .csstransforms .cn-wrapper li:not(.active) a:active,
 .csstransforms .cn-wrapper li:not(.active) a:focus {
-  background-color: #b31515;
-  background-color: hsla(0, 88%, 70%, 1);
+  background-color: #0506588a;
+  background-color: rgba(30, 6, 245, 0.507);
 }
 .csstransforms .cn-wrapper li:not(.active) a:focus
 {
