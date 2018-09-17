@@ -13,7 +13,7 @@
 	font-family: Georgia, serif;
 	font-size: 10vw;
 	font-weight: normal;
-	color: var(--color-title);
+	color: #fff !important;
 	text-align: center;
 	margin: 0;
 	pointer-events: none;
@@ -22,7 +22,7 @@
 .content__subtitle {
 	font-size: 1.25em;
 	background: var(--color-subtitle-bg);
-	color: var(--color-subtitle);
+	color: #000 !important;
 	/* padding: 0.45em 0.5em; */
 	line-height: 1;
 	margin: 0;
