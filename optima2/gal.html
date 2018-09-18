@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<script src="vanta/vendor/three.r92.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="vanta/vendor/three.r92.min.js"></script>
 	<script src="vanta/dist/vanta.clouds.min.js"></script>
 	<script>
 		function webGL() {
@@ -122,5 +127,22 @@
 </div>
 <script type="text/javascript">jssor_1_slider_init();</script>
 <!-- #endregion Jssor Slider End -->
+<div class="component">
+		<!-- Start Nav Structure -->
+		<button class="cn-button" id="cn-button">+</button>
+		<div class="cn-wrapper" id="cn-wrapper">
+			<ul>
+			  <li><a href="gal.html"><span class="icon-picture"></span></a></li>
+			  <li><a href="#"><span class="icon-headphones"></span></a></li>
+			  <li><a href="index.html"><span class="icon-home"></span></a></li>
+			  <li><a href="#"><span class="icon-facetime-video"></span></a></li>
+			  <li><a href="#"><span class="icon-envelope-alt"></span></a></li>
+			 </ul>
+		</div>
+		<div id="cn-overlay" class="cn-overlay"></div>
+		<!-- End Nav Structure -->
+	</div>
+	<script src="js/polyfills.js"></script>
+	<script src="js/demo1.js"></script>
 </body>
 </html>
