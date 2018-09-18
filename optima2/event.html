@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/material-cards.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		
     <style type="text/css">
 
         html {
@@ -40,7 +45,7 @@
     
     <!-- header of the event page-->
     <div class="page-header">
-      <p>THis is ditikrushna Giri</p>  
+      <!-- <p>THis is ditikrushna Giri</p>   -->
     </div>
 
 
@@ -644,7 +649,23 @@
         </div>
     </div>
 </section>
-
+<div class="component">
+    <!-- Start Nav Structure -->
+    <button class="cn-button" id="cn-button">+</button>
+    <div class="cn-wrapper" id="cn-wrapper">
+        <ul>
+          <li><a href="gal.html"><span class="icon-picture"></span></a></li>
+          <li><a href="#"><span class="icon-headphones"></span></a></li>
+          <li><a href="index.html"><span class="icon-home"></span></a></li>
+          <li><a href="#"><span class="icon-facetime-video"></span></a></li>
+          <li><a href="#"><span class="icon-envelope-alt"></span></a></li>
+         </ul>
+    </div>
+    <div id="cn-overlay" class="cn-overlay"></div>
+    <!-- End Nav Structure -->
+</div>
+<script src="js/polyfills.js"></script>
+<script src="js/demo1.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
     $(function() {
