@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+            <script src="vendor/three.r92.min.js"></script>
+            <script src="dist/vanta.clouds.min.js"></script>
+            <script>
+                function webGL() {
+                    VANTA.CLOUDS({
+                    el: "#scene",
+                    backgroundAlpha: 1.00
+                    });
+                }
+            </script>
+    </head>
+    <body onload="webGL()">
+        <div id="scene"></div>
+    </body>
+
+</html>
