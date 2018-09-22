@@ -11,8 +11,27 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <script src="vanta/vendor/three.r92.min.js"></script>
     <script src="vanta/dist/vanta.clouds.min.js"></script>
+    
+
+
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="googy/gooey.min.css">
+    <link rel="stylesheet" href="googy/livedemo.css">
+    <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="googy/gooey.min.js"></script>
+
+
+
+
+
+
+
     <style>
       
 
@@ -28,6 +47,8 @@
             backgroundAlpha: 1.00
             });
         }
+
+        
     </script>
 
 
@@ -35,9 +56,134 @@
     
 </head>
 <body onload = "webGL()">
+        <script>
+                $(function($) {
+                    $("#gooey-upper").gooeymenu({
+                        bgColor: "#ff6666",
+                        contentColor: "white",
+                        style: "circle",
+                        horizontal: {
+                            menuItemPosition: "glue"
+                        },
+                        vertical: {
+                            menuItemPosition: "spaced",
+                            direction: "up"
+                        },
+                        circle: {
+                            radius: 80
+                        },
+                        margin: "small",
+                        size: 90,
+                        bounce: true,
+                        bounceLength: "small",
+                        transitionStep: 100,
+                        hover: "#e55b5b"
+                    });
+        $("#gooey-h").gooeymenu({
+                        bgColor: "#68d099",
+                        contentColor: "white",
+                        style: "horizontal",
+                        horizontal: {
+                            menuItemPosition: "glue"
+                        },
+                        vertical: {
+                            menuItemPosition: "spaced",
+                            direction: "up"
+                        },
+                        circle: {
+                            radius: 90
+                        },
+                        margin: "small",
+                        size: 80,
+                        bounce: true,
+                        bounceLength: "small",
+                        transitionStep: 100,
+                        hover: "#5dbb89"
+                    });
+        $("#gooey-round").gooeymenu({
+                        bgColor: "#68d099",
+                        contentColor: "white",
+                        style: "circle",
+                        horizontal: {
+                            menuItemPosition: "spaced"
+                        },
+                        vertical: {
+                            menuItemPosition: "spaced",
+                            direction: "up"
+                        },
+                        circle: {
+                            radius: 85
+                        },
+                        margin: "small",
+                        size: 80,
+                        bounce: true,
+                        bounceLength: "small",
+                        transitionStep: 100,
+                        hover: "#5dbb89"
+                    });
+           $("#gooey-API").gooeymenu({
+                        bgColor: "#68d099",
+                        contentColor: "white",
+                        style: "circle",
+                        circle: {
+                            radius: 85
+                        },
+                        margin: "small",
+                        size: 70,
+                        bounce: true,
+                        bounceLength: "small",
+                        transitionStep: 100,
+                        hover: "#5dbb89",
+                        open: function() {
+                            $(this).find(".gooey-menu-item").css("background-color", "steelblue");
+                            $(this).find(".open-button").css("background-color", "steelblue");
+                        },
+                        close: function() {
+                            $(this).find(".gooey-menu-item").css("background-color", "#ffdf00");
+                            $(this).find(".open-button").css("background-color", "#ffdf00");
+                        }
+                    });
+         $("#gooey-v").gooeymenu({
+                        bgColor: "#68d099",
+                        contentColor: "white",
+                        style: "vertical",
+                        horizontal: {
+                            menuItemPosition: "glue"
+                        },
+                        vertical: {
+                            menuItemPosition: "spaced",
+                            direction: "up"
+                        },
+                        circle: {
+                            radius: 90
+                        },
+                        margin: "small",
+                        size: 70,
+                        bounce: true,
+                        bounceLength: "small",
+                        transitionStep: 100,
+                        hover: "#68d099"
+                    });
+        
+                });
+            </script>
     <div id = "scene" width="100%"></div>
-    <div class="container" style="margin: 0;">
-       
+
+    <div >
+            <nav id="gooey-v">
+                    <input type="checkbox" class="menu-open" name="menu-open4" id="menu-open4"/>
+                    <label class="open-button" for="menu-open4">
+                      <span class="burger burger-1"></span>
+                      <span class="burger burger-2"></span>
+                      <span class="burger burger-3"></span>
+                    </label>
+                    
+                    <a href="#" class="gooey-menu-item"> <i class="fa fa-train"></i> </a>
+                    <a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+                    <a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+                    <a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+                   </nav>
 </div>
+
 </body>
 </html>
